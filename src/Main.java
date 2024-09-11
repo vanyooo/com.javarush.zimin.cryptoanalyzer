@@ -13,12 +13,11 @@ public class Main {
                 Cipher.decryption();
                 break;
             } else if (userNumber.equals("3")) {
-                System.out.println("Досвидания!");
+                System.out.println("До свидания!");
                 break;
             } else {
                 System.out.println("Вы нажали не туда, выберете еще раз");
             }
         }
-        con.close();
     }
 }
