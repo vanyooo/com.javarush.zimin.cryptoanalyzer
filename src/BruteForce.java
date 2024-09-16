@@ -79,3 +79,4 @@ public class BruteForce {
         return new String(charArray).getBytes(StandardCharsets.UTF_8);
     }
 }
+

@@ -34,3 +34,4 @@ public class MyEncryption {
         return new String(charArray).getBytes(StandardCharsets.UTF_8);// получаем массив байт после кодировки
     }
 }
+
