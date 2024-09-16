@@ -33,7 +33,7 @@ public class Cipher {
                 key = con.nextInt(); // Чтение ключа
                 if (key > 0) {
                     System.out.println("Ваш ключ дешифрования: " + key);
-                    FileWork.modeEncryption(); // Вызов метода работы с файлами
+                    FileWork.modeDecryption(); // Вызов метода работы с файлами
                     break; // Выход из цикла после успешного ввода
                 } else {
                     System.out.println("Ключ не может быть меньше 0. Попробуйте снова.");

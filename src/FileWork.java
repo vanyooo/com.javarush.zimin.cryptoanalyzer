@@ -9,7 +9,7 @@ public class FileWork {
     public static void modeEncryption() {
         try (Scanner con = new Scanner(System.in)) {
             while (true) {
-                System.out.println("Введите путь к исходному файлу:");//F:/1/text.txt
+                System.out.println("Введите путь к исходному файлу:");
                 Path path1 = Path.of(con.nextLine());                                           // указываем путь к файлу откуда берем текст
                 if (Files.exists(path1)) {                                                      // проверяем есть ли данный путь/ если есть продолжаем работу
                     System.out.println("Введите путь куда будет скопирован файл:");
