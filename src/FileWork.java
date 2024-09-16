@@ -17,7 +17,7 @@ public class FileWork {
                     if (Files.exists(path2)) {                                                  // если файл уже существует, уточнить перезапись файла
                         System.out.println("Файл уже существует. Перезаписать? (да/нет)");
                         String response = con.nextLine();
-                        if (!response.equalsIgnoreCase("да")) {
+                        if (response.equalsIgnoreCase("нет")) {
                             System.out.println("Операция отменена.");
                             return;
                         }

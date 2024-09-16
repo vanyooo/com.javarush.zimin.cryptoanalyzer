@@ -27,7 +27,7 @@ public class Cipher {
 
     public static void decryption() {
         Scanner con = new Scanner(System.in);
-        System.out.println("Вы выбрали режим дешифрования.\nВведите ключ дешифрования.");
+        System.out.println("Вы выбрали режим дешифрования.\nВведите ключ дешифрования:");
         if (con.hasNextInt()) {
             key = con.nextInt();
             System.out.println("Ваш ключ дешифрования: " + key);

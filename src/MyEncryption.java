@@ -8,15 +8,8 @@ public class MyEncryption {
         Alphabet.search();// заполнение мапы (ключ-символ, значение-порядковый номер)
         int keyStep = Cipher.key;// ключ пользователя
         for (int i = 0; i < charArray.length; i++) {
-            char lowerChar = Character.toLowerCase(charArray[i]);//-
-            char upperChar = Character.toUpperCase(charArray[i]);//-
-            if (Alphabet.alphabetMap.containsKey(lowerChar)) { //цикл зашифровки со сдвигом keyStep
-                int position = Alphabet.alphabetMap.get(lowerChar);
-                int p = (position + keyStep) % Alphabet.ALPHABET.length;
-                char newChar = Alphabet.ALPHABET[p];
-                charArray[i] = newChar;
-            } else if (Alphabet.alphabetMap.containsKey(upperChar)){
-                int position = Alphabet.alphabetMap.get(upperChar);
+            if (Alphabet.alphabetMap.containsKey(charArray[i])) { //цикл зашифровки со сдвигом keyStep
+                int position = Alphabet.alphabetMap.get(charArray[i]);
                 int p = (position + keyStep) % Alphabet.ALPHABET.length;
                 char newChar = Alphabet.ALPHABET[p];
                 charArray[i] = newChar;
@@ -31,7 +24,7 @@ public class MyEncryption {
         Alphabet.search();// заполнение мапы (ключ-символ, значение-порядковый номер)
         int keyStep = Cipher.key;// ключ пользователя
         for (int i = 0; i < charArray.length; i++) {
-            if (Alphabet.alphabetMap.containsKey(charArray[i])) {                                 //цикл зашифровки со сдвигом keyStep
+            if (Alphabet.alphabetMap.containsKey(charArray[i])) { //цикл дешифровки со сдвигом keyStep
                 int position = Alphabet.alphabetMap.get(charArray[i]);
                 int newPosition = (position - keyStep + Alphabet.ALPHABET.length) % Alphabet.ALPHABET.length;
                 char newChar = Alphabet.ALPHABET[newPosition];
