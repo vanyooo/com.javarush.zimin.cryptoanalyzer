@@ -7,37 +7,13 @@ import java.util.Scanner;
 public class BruteForce {
 
     public static Scanner con = new Scanner(System.in);
-    public static void inputFile() {
-        System.out.println("Вы выбрали режим грубой силы, а это значит у Вас нет ключа");
-        //
-        while (true) {
-            System.out.println("Введите путь к зашифрованному файлу:");//F:/1/text.txt
-            Path path1 = Path.of(con.nextLine());                                           // указываем путь к файлу откуда берем текст
-            if (Files.exists(path1)) {                                                      // проверяем есть ли данный путь/ если есть продолжаем работу
-                System.out.println("Введите путь, куда будет скопирован файл:");
-                Path path2 = Path.of(con.nextLine());                                       //указываем путь к файлу куда сохраняем текст
-                if (Files.exists(path2)) {                                                  // если файл уже существует, уточнить перезапись файла
-                    System.out.println("Файл уже существует. Перезаписать? (да/нет)");
-                    String response = con.nextLine();
-                    if (!response.equalsIgnoreCase("да")) {
-                        System.out.println("Операция отменена.");
-                        return;
-                    }
-                }
-                byte[] bytes;
-                try {
-                    bytes = Files.readAllBytes(path1);//читаем все байты из изначального файла
-                    Files.write(path2,decoding(bytes));// методом decoding записываем расшифрованный текст
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println("Файл успешно расшифрован и сохранен.");
-                break;
-            } else {
-                System.out.println("Вы ввели некорректный путь. Пожалуйста, попробуйте снова.");
-                inputFile();
-            }
-        }
+
+    public static void enumerationMethod(){
+        System.out.println(Menu.IS_NOT_KEY);
+        Cipher.chooseFileWrite = 3;
+        FileWork.fileRead();
+        FileWork.fileWrite();
+
     }
 
     public static byte[] decoding(byte[] bytes){
