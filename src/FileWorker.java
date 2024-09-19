@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class FileWork {
+public class FileWorker {
 
     public static byte[] bytes;
     public static void fileRead() {
@@ -41,13 +41,13 @@ public class FileWork {
                 }
             }
             if (Cipher.chooseFileWrite == 1) {
-                Files.write(path2, MyEncryption.alphabetEncryption(FileWork.bytes));
+                Files.write(path2, MyEncryption.alphabetEncryption(FileWorker.bytes));
             } else if (Cipher.chooseFileWrite == 2){
-                Files.write(path2, MyEncryption.alphabetDecryption(FileWork.bytes));
+                Files.write(path2, MyEncryption.alphabetDecryption(FileWorker.bytes));
             } else if (Cipher.chooseFileWrite == 3){
-                Files.write(path2, BruteForce.decoding(FileWork.bytes));
+                Files.write(path2, BruteForce.decoding(FileWorker.bytes));
             } else if (Cipher.chooseFileWrite == 4){
-                Files.write(path2, MapAnalysis.createMap(FileWork.bytes));
+                Files.write(path2, MapAnalysis.createMap(FileWorker.bytes));
             }
             System.out.println(Menu.ALL_GOOD);
         } catch (IOException e) {

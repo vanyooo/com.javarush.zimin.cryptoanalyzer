@@ -1,7 +1,4 @@
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class BruteForce {
@@ -11,8 +8,8 @@ public class BruteForce {
     public static void enumerationMethod(){
         System.out.println(Menu.IS_NOT_KEY);
         Cipher.chooseFileWrite = 3;
-        FileWork.fileRead();
-        FileWork.fileWrite();
+        FileWorker.fileRead();
+        FileWorker.fileWrite();
 
     }
 

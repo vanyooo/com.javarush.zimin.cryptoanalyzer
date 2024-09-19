@@ -48,8 +48,8 @@ public class MapAnalysis {
     public static void analysisMethod(){
         System.out.println(Menu.Analysis);
         Cipher.chooseFileWrite = 4;
-        FileWork.fileRead();
-        FileWork.fileWrite();
+        FileWorker.fileRead();
+        FileWorker.fileWrite();
     }
 
     public static byte[] createMap(byte[] bytes) {
@@ -102,6 +102,25 @@ public class MapAnalysis {
             }
         }
 
+        Map<String, Integer> map = getStringIntegerMap();
+
+        String maxKey = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+        List<String> keys = new ArrayList<>(map.keySet());
+        int index = keys.indexOf(maxKey);
+        int keyStep = index + 1;
+
+        for (int i = 0; i < charArray.length; i++) {
+            if (Alphabet.alphabetMap.containsKey(charArray[i])) { //цикл дешифровки со сдвигом keyStep
+                int position = Alphabet.alphabetMap.get(charArray[i]);
+                int newPosition = (position - keyStep + Alphabet.ALPHABET.length) % Alphabet.ALPHABET.length;
+                char newChar = Alphabet.ALPHABET[newPosition];
+                charArray[i] = newChar;
+            }
+        }
+        return new String(charArray).getBytes(StandardCharsets.UTF_8);
+    }
+
+    private static Map<String, Integer> getStringIntegerMap() {
         Map<String, Integer> map = new LinkedHashMap<>();
         map.put("a", a);
         map.put("b", b);
@@ -143,20 +162,6 @@ public class MapAnalysis {
         map.put("questionMark", questionMark);
         map.put("exclamationMark", exclamationMark);
         map.put("space", space);
-
-        String maxKey = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
-        List<String> keys = new ArrayList<>(map.keySet());
-        int index = keys.indexOf(maxKey);
-        int keyStep = index + 1;
-
-        for (int i = 0; i < charArray.length; i++) {
-            if (Alphabet.alphabetMap.containsKey(charArray[i])) { //цикл дешифровки со сдвигом keyStep
-                int position = Alphabet.alphabetMap.get(charArray[i]);
-                int newPosition = (position - keyStep + Alphabet.ALPHABET.length) % Alphabet.ALPHABET.length;
-                char newChar = Alphabet.ALPHABET[newPosition];
-                charArray[i] = newChar;
-            }
-        }
-        return new String(charArray).getBytes(StandardCharsets.UTF_8);
+        return map;
     }
 }

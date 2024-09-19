@@ -14,8 +14,8 @@ public class Cipher {
                 if (key > 0) {
                     System.out.println(Menu.INFO_KEY + key);
                     chooseFileWrite = 1;
-                    FileWork.fileRead();
-                    FileWork.fileWrite(); // Вызов метода работы с файлами
+                    FileWorker.fileRead();
+                    FileWorker.fileWrite(); // Вызов метода работы с файлами
                     break; // Выход из цикла после успешного ввода
                 } else {
                     System.out.println(Menu.KEY_0);
@@ -36,8 +36,8 @@ public class Cipher {
                 if (key > 0) {
                     System.out.println(Menu.INFO_KEY + key);
                     chooseFileWrite = 2;
-                    FileWork.fileRead();
-                    FileWork.fileWrite();
+                    FileWorker.fileRead();
+                    FileWorker.fileWrite();
                     break;
                 } else {
                     System.out.println(Menu.KEY_0);
