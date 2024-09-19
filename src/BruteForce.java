@@ -24,7 +24,7 @@ public class BruteForce {
         char[] charArray;
         while (true) {
             charArray = str.toCharArray();
-            for (int i = 0; i < 10; i++) {// даём пользователю первое предложение расшифрованного текста
+            for (int i = 0; i < 20; i++) {// даём пользователю первое предложение расшифрованного текста
                 if (Alphabet.alphabetMap.containsKey(charArray[i])) { //цикл дешифровки со сдвигом keyStep
                     int position = Alphabet.alphabetMap.get(charArray[i]);
                     int newPosition = (position - key + Alphabet.ALPHABET.length) % Alphabet.ALPHABET.length;
