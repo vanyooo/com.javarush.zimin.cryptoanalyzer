@@ -46,6 +46,8 @@ public class FileWork {
                 Files.write(path2, MyEncryption.alphabetDecryption(FileWork.bytes));
             } else if (Cipher.chooseFileWrite == 3){
                 Files.write(path2, BruteForce.decoding(FileWork.bytes));
+            } else if (Cipher.chooseFileWrite == 4){
+                Files.write(path2, MapAnalysis.createMap(FileWork.bytes));
             }
             System.out.println(Menu.ALL_GOOD);
         } catch (IOException e) {

@@ -1,6 +1,6 @@
 public class Menu {
     //main
-    public static final String START = "Выберете режим работы:\n1 - шифрование текста.\n2 - расшифровка текста.\n3 - расшифровка без ключа.\n4 - выход из программы.";
+    public static final String START = "Выберете режим работы:\n1 - шифрование текста.\n2 - расшифровка текста.\n3 - расшифровка без ключа.\n4 - режим статического анализа.\n5 - выход из программы.";
     public static final String START_MISS = "Вы нажали не туда, выберете еще раз";
     public static final String BYE = "До свидания!";
     //Cipher
@@ -19,5 +19,6 @@ public class Menu {
     public static final String ERROR = "Произошла ошибка при обработке файла: ";
     //BruteForce
     public static final String IS_NOT_KEY = "Вы выбрали режим грубой силы, а это значит у Вас нет ключа";
+    public static final String Analysis = "Вы выбрали режим статистического анализа";
 }
 

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-            Scanner con = new Scanner(System.in);
+        Scanner con = new Scanner(System.in);
         while (true) {
             System.out.println(Menu.START);
             String userNumber = con.nextLine();
@@ -16,6 +16,8 @@ public class Main {
                 BruteForce.enumerationMethod();
 
             } else if (userNumber.equals("4")) {
+                MapAnalysis.analysisMethod();
+            } else if (userNumber.equals("5")) {
                 System.out.println(Menu.BYE);
                 break;
             } else {
